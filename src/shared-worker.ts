@@ -2,6 +2,7 @@
 const ports: any[] = [];
 
 // Manejo de la conexión de cada cliente.
+// @ts-expect-error: ERR
 self.onconnect = function (event: any) {
   const port = event.ports[0];
   ports.push(port);

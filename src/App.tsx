@@ -16,6 +16,7 @@ function App() {
     // Configurar el listener para recibir mensajes del worker
     worker.port.onmessage = (e) => {
       console.log("Mensaje recibido desde el SharedWorker:", e.data);
+      // @ts-expect-error: ERR
       setMessages((prev) => [...prev, e.data]);
     };
 
